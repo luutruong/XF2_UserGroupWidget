@@ -1,0 +1,10 @@
+<div class="block">
+    <div class="block-container">
+        <xf:if is="$title"><h3 class="block-minorHeader">{$title}</h3></xf:if>
+        <ol class="block-row listPlain">
+            <xf:foreach loop="$users" value="$user">
+                <li><xf:username user="{$user}" rich="true"/></li>
+            </xf:foreach>
+        </ol>
+    </div>
+</div>

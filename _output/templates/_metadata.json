@@ -1,0 +1,12 @@
+{
+    "admin/ugw_widget_def_options_user_groups.html": {
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "0888bf1da6262b5036b877cccc399172"
+    },
+    "public/ugw_widget_users.html": {
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "c6490facf89d1c4e59933a759aafde8b"
+    }
+}

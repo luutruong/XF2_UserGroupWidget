@@ -1,0 +1,14 @@
+{
+    "widget_def.tl_UserGroupWidget.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "2122069aa5f01ea56c835fc8ec9c40ca"
+    },
+    "widget_def_desc.tl_UserGroupWidget.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "a92a3e64dfb27e35e64093ca6ab11299"
+    }
+}

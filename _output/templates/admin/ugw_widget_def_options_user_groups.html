@@ -1,0 +1,7 @@
+<xf:checkboxrow label="{{ phrase('ugw_display_users_of_user_groups') }}"
+                value="{$options.user_group_ids}"
+                name="options[user_group_ids]">
+    <xf:foreach loop="$userGroups" value="$userGroup">
+        <xf:option value="{$userGroup.value}">{$userGroup.label}</xf:option>
+    </xf:foreach>
+</xf:checkboxrow>
