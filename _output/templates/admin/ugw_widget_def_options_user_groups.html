@@ -5,3 +5,23 @@
         <xf:option value="{$userGroup.value}">{$userGroup.label}</xf:option>
     </xf:foreach>
 </xf:checkboxrow>
+
+<xf:numberboxrow name="options[limit]" label="{{ phrase('ugw_limit_entries') }}"
+                 value="{$options.limit}"/>
+
+<xf:radiorow name="options[order]" value="{$options.order}" label="{{ phrase('ugw_order') }}">
+    <xf:option value="username">{{ phrase('ugw_order_username') }}</xf:option>
+    <xf:option value="username">{{ phrase('ugw_order_message_count') }}</xf:option>
+    <xf:option value="username">{{ phrase('ugw_order_register_date') }}</xf:option>
+    <xf:option value="username">{{ phrase('ugw_order_trophy_points') }}</xf:option>
+</xf:radiorow>
+
+<xf:radiorow name="options[direction]" label="{{ phrase('ugw_order_direction') }}"
+             value="{$options.direction}">
+    <xf:option value="asc">{{ phrase('ugw_direction_ascending') }}</xf:option>
+    <xf:option value="desc">{{ phrase('ugw_direction_descending') }}</xf:option>
+</xf:radiorow>
+
+<xf:numberboxrow name="options[ttl]" value="{$options.ttl}"
+                 units="{{ phrase('units_minutes') }}"
+                 label="{{ phrase('ugw_cache_ttl') }}"/>
