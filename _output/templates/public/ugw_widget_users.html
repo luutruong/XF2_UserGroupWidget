@@ -3,7 +3,19 @@
         <xf:if is="$title"><h3 class="block-minorHeader">{$title}</h3></xf:if>
         <ol class="block-row listPlain">
             <xf:foreach loop="$users" value="$user">
-                <li><xf:username user="{$user}" rich="true"/></li>
+                <div class="contentRow">
+                    <div class="contentRow-figure">
+                        <xf:avatar user="$user" size="s"/>
+                    </div>
+                    <div class="contentRow-main contentRow-main--close">
+                        <xf:username user="$user"/>
+                        <div class="contentRow-minor contentRow-minor--hideLinks">
+                            <xf:if is="$user.Profile.website">
+                                <a href="{$user.Profile.website}" rel="nofollow">{$user.Profile.website}</a>
+                            </xf:if>
+                        </div>
+                    </div>
+                </div>
             </xf:foreach>
         </ol>
     </div>
