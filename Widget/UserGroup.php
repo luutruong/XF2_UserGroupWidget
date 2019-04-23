@@ -59,7 +59,7 @@ class UserGroup extends AbstractWidget
 
         $secondaryGroupsColumn = $finder->columnSqlName('secondary_group_ids');
         foreach ($userGroupIds as $userGroupId) {
-            $whereOr[] = $finder->expression('FIND_IN_SET(' . $userGroupId . ',' . $secondaryGroupsColumn .') > 0');
+            $whereOr[] = $finder->expression('FIND_IN_SET(' . $userGroupId . ',' . $secondaryGroupsColumn . ') > 0');
         }
 
         $finder->order($this->options['order'], $this->options['direction']);
@@ -68,6 +68,7 @@ class UserGroup extends AbstractWidget
         $finder->limit($this->options['limit']);
 
         $users = $finder->fetchColumns('user_id');
+
         return array_column($users, 'user_id');
     }
 
@@ -97,6 +98,7 @@ class UserGroup extends AbstractWidget
         }
 
         $decoded = json_decode($value, true);
+
         return is_array($decoded) ? $decoded : null;
     }
 
