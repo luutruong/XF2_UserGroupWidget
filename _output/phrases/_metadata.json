@@ -1,4 +1,70 @@
 {
+    "ugw_cache_ttl.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "320e839968b6d68b0ffa2b24a54a8565"
+    },
+    "ugw_direction_ascending.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "cf3fb1ff52ea1eed3347ac5401ee7f0c"
+    },
+    "ugw_direction_descending.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "e3cf5ac19407b1a62c6fccaff675a53b"
+    },
+    "ugw_display_users_of_user_groups.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "0390489d04e0571e4f1d22765270207e"
+    },
+    "ugw_limit_entries.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "bec1833e033f0120b35c4993521c4152"
+    },
+    "ugw_order.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "01fda57aa6c7e9f07f5aa36b108e95cb"
+    },
+    "ugw_order_direction.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "1ef176547b783195eb9c06166dba55e6"
+    },
+    "ugw_order_message_count.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "a12ab8ec2c913aeef31fa15e0a4afae1"
+    },
+    "ugw_order_register_date.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "7bd01eade14ae2aae415a40c26726389"
+    },
+    "ugw_order_trophy_points.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "b0f81e466d7569af9ee36eb2eb0d1d86"
+    },
+    "ugw_order_username.txt": {
+        "global_cache": false,
+        "version_id": 2000000,
+        "version_string": "2.0.0",
+        "hash": "f6039d44b29456b20f8f373155ae4973"
+    },
     "widget_def.tl_UserGroupWidget.txt": {
         "global_cache": false,
         "version_id": 2000000,
