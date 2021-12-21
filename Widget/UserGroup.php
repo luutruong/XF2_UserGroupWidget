@@ -64,7 +64,9 @@ class UserGroup extends AbstractWidget
     protected function getUserIdsForCache(): array
     {
         $options = $this->options;
+        /** @var User $finder */
         $finder = $this->finder('XF:User');
+        $finder->isValidUser();
 
         $userGroupIds = $options['user_group_ids'];
         $userGroupIds = array_map('intval', $userGroupIds);
