@@ -2,11 +2,11 @@
     "admin/ugw_widget_def_options_user_groups.html": {
         "version_id": 2000000,
         "version_string": "2.0.0",
-        "hash": "0ec27131170e27b8c5f08689ae07e550"
+        "hash": "06d050fd311c1087f23838cc7c3b00a6"
     },
     "public/ugw_widget_users.html": {
         "version_id": 2000000,
         "version_string": "2.0.0",
-        "hash": "f113f90b2af6f0185728b42711d5eaf2"
+        "hash": "298f6f7581da3da4c4afa15f2c420bcd"
     }
 }

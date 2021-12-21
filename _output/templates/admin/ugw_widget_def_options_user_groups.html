@@ -6,14 +6,25 @@
     </xf:foreach>
 </xf:checkboxrow>
 
+<xf:formrow rowtype="input" label="{{ phrase('last_visited_between') }}">
+    <div class="inputGroup">
+        <xf:dateinput name="options[last_activity_start]"
+                      value="{$options.last_activity_start}" size="15" />
+        <span class="inputGroup-text">-</span>
+        <xf:dateinput name="options[last_activity_end]"
+                      value="{$options.last_activity_end}" size="15" />
+    </div>
+</xf:formrow>
+
 <xf:numberboxrow name="options[limit]" label="{{ phrase('ugw_limit_entries') }}"
                  value="{$options.limit}"/>
 
 <xf:radiorow name="options[order]" value="{$options.order}" label="{{ phrase('ugw_order') }}">
     <xf:option value="username">{{ phrase('ugw_order_username') }}</xf:option>
-    <xf:option value="username">{{ phrase('ugw_order_message_count') }}</xf:option>
-    <xf:option value="username">{{ phrase('ugw_order_register_date') }}</xf:option>
-    <xf:option value="username">{{ phrase('ugw_order_trophy_points') }}</xf:option>
+    <xf:option value="message_count">{{ phrase('ugw_order_message_count') }}</xf:option>
+    <xf:option value="register_date">{{ phrase('ugw_order_register_date') }}</xf:option>
+    <xf:option value="trophy_points">{{ phrase('ugw_order_trophy_points') }}</xf:option>
+    <xf:option value="reaction_score">{{ phrase('ugw_order_reaction_score') }}</xf:option>
 </xf:radiorow>
 
 <xf:radiorow name="options[direction]" label="{{ phrase('ugw_order_direction') }}"
@@ -22,6 +33,12 @@
     <xf:option value="desc">{{ phrase('ugw_direction_descending') }}</xf:option>
 </xf:radiorow>
 
-<xf:numberboxrow name="options[ttl]" value="{$options.ttl}"
-                 units="{{ phrase('units_minutes') }}"
+<xf:checkboxrow label="">
+    <xf:option name="options[display_avatar]" value="1" selected="{$options.display_avatar}">
+        {{ phrase('ugw_display_user_avatar') }}
+    </xf:option>
+</xf:checkboxrow>
+
+<xf:numberboxrow name="options[cache_ttl]" value="{$options.cache_ttl}"
+                 units="{{ phrase('units_seconds') }}"
                  label="{{ phrase('ugw_cache_ttl') }}"/>
