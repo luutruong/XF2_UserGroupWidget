@@ -39,7 +39,7 @@ class UserGroup extends AbstractWidget
         /** @var User $finder */
         $finder = $this->finder('XF:User');
         $finder->where('user_id', $userIds);
-        $finder->isValidUser();
+        $finder->where('is_banned', false);
 
         $users = $finder->fetch()->sortByList($userIds);
         if ($users->count() > $this->options['limit']) {
@@ -66,7 +66,7 @@ class UserGroup extends AbstractWidget
         $options = $this->options;
         /** @var User $finder */
         $finder = $this->finder('XF:User');
-        $finder->isValidUser();
+        $finder->where('is_banned', false);
 
         $userGroupIds = $options['user_group_ids'];
         $userGroupIds = array_map('intval', $userGroupIds);
