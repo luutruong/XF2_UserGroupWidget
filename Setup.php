@@ -26,7 +26,7 @@ class Setup extends AbstractSetup
         $this->doDropTables($this->getTables());
     }
 
-    public function upgrade1000400Step1(): void
+    public function upgrade2000200Step1(): void
     {
         $this->doCreateTables($this->getTables1());
     }
