@@ -1,12 +1,22 @@
 {
     "admin/ugw_widget_def_options_user_groups.html": {
-        "version_id": 2000000,
-        "version_string": "2.0.0",
-        "hash": "06d050fd311c1087f23838cc7c3b00a6"
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "e3ab58d33748b08ff2e7e22fac503b6e"
+    },
+    "public/ugw_account_partner.html": {
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "b77cc1578536f433915d7bc6531d9141"
     },
     "public/ugw_widget_users.html": {
-        "version_id": 2000000,
-        "version_string": "2.0.0",
-        "hash": "298f6f7581da3da4c4afa15f2c420bcd"
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "3a581111a8c2846aee19d868ea270fbc"
+    },
+    "public/ugw_widget_users.less": {
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "c3dab2f99eb36c94d3d8d4931fca0231"
     }
 }

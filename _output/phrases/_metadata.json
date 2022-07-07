@@ -5,6 +5,12 @@
         "version_string": "2.0.0",
         "hash": "320e839968b6d68b0ffa2b24a54a8565"
     },
+    "ugw_destination_url_for_your_sidebar_avatar_explain.txt": {
+        "global_cache": false,
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "4cc7a6177d9e3a34e40c09a0a3e28425"
+    },
     "ugw_direction_ascending.txt": {
         "global_cache": false,
         "version_id": 2000000,
@@ -17,11 +23,29 @@
         "version_string": "2.0.0",
         "hash": "e3cf5ac19407b1a62c6fccaff675a53b"
     },
-    "ugw_display_user_avatar.txt": {
+    "ugw_display_style.txt": {
         "global_cache": false,
-        "version_id": 2000000,
-        "version_string": "2.0.0",
-        "hash": "1e40e58ac1e69cdb1e2107ee9cf1e33b"
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "4636b3f6c0836ccf93ab6fb9a09a52b8"
+    },
+    "ugw_display_style_avatar_only.txt": {
+        "global_cache": false,
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "537bcc94265f70622c5ac4c310046d34"
+    },
+    "ugw_display_style_name.txt": {
+        "global_cache": false,
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "49ee3087348e8d44e1feda1917443987"
+    },
+    "ugw_display_style_name_with_avatar.txt": {
+        "global_cache": false,
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "23fadc6342d1c0040f6cddf2a015261e"
     },
     "ugw_display_users_of_user_groups.txt": {
         "global_cache": false,
@@ -53,6 +77,12 @@
         "version_string": "2.0.0",
         "hash": "a12ab8ec2c913aeef31fa15e0a4afae1"
     },
+    "ugw_order_random.txt": {
+        "global_cache": false,
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "64663f4646781c9c0110838b905daa23"
+    },
     "ugw_order_reaction_score.txt": {
         "global_cache": false,
         "version_id": 2000000,
@@ -76,6 +106,30 @@
         "version_id": 2000000,
         "version_string": "2.0.0",
         "hash": "f6039d44b29456b20f8f373155ae4973"
+    },
+    "ugw_partners_and_advertisers.txt": {
+        "global_cache": false,
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "9426d03495871a97d678146c2c91f766"
+    },
+    "ugw_profile_url.txt": {
+        "global_cache": false,
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "bce636b6d22457d9719ffdbba765c078"
+    },
+    "ugw_url_type_forum_profile.txt": {
+        "global_cache": false,
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "0bd5fe244b94701a1508a114cc5726fa"
+    },
+    "ugw_url_type_url_of_your_choice.txt": {
+        "global_cache": false,
+        "version_id": 2000100,
+        "version_string": "2.0.1",
+        "hash": "486c8d7c5e1ebadce954b75b1d14f4fa"
     },
     "widget_def.tl_UserGroupWidget.txt": {
         "global_cache": false,

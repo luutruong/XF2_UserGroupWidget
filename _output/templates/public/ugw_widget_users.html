@@ -1,39 +1,57 @@
-<div class="block"{{ widget_data($widget) }}>
-    <div class="block-container">
-        <xf:if is="$title"><h3 class="block-minorHeader">{$title}</h3></xf:if>
-        <xf:if is="$options.display_avatar">
-            <xf:macro name="list_users_with_avatar" arg-users="{$users}" />
-        <xf:else />
-            <xf:macro name="list_users" arg-users="{$users}" />
-        </xf:if>
+<xf:if is="$users is not empty">
+    <xf:css src="ugw_widget_users.less" />
+    <div class="block ugw-block ugw-block--{$options.style}"{{ widget_data($widget) }}>
+        <div class="block-container">
+            <xf:if is="$title"><h3 class="block-minorHeader">{$title}</h3></xf:if>
+            <xf:if is="$options.style == 'name_avatar'">
+                <xf:macro name="list_users_with_avatar" arg-users="{$users}" arg-profileUrls="{$profileUrls}" />
+            <xf:elseif is="$options.style == 'avatar'" />
+                <xf:macro name="list_users_avatar" arg-users="{$users}" arg-profileUrls="{$profileUrls}" />
+            <xf:else />
+                <xf:macro name="list_users" arg-users="{$users}" arg-profileUrls="{$profileUrls}" />
+            </xf:if>
+        </div>
     </div>
-</div>
+</xf:if>
 
-<xf:macro name="list_users" arg-users="!">
+<xf:macro name="list_users" arg-users="!" arg-profileUrls="!">
     <div class="block-row block-row--minor">
-        <ul class="listInline listInline--comma">
+        <ul class="listInline listInline--comma ugw-userList">
             <xf:foreach loop="$users" value="$user"><xf:trim>
                 <li><xf:username user="$user" rich="true"
+                                 href="{$profileUrls.{$user.user_id}}"
                                  class="{{ !$user.visible ? 'username--invisible' : '' }}" /></li>
             </xf:trim></xf:foreach>
         </ul>
     </div>
 </xf:macro>
 
-<xf:macro name="list_users_with_avatar" arg-users="!">
-    <ol class="block-row listPlain">
+<xf:macro name="list_users_avatar" arg-users="!" arg-profileUrls="!">
+    <ol class="block-row listPlain ugw-userList">
+        <xf:foreach loop="$users" value="$user">
+            <li><xf:avatar user="$user" size="m" img="true" href="{$profileUrls.{$user.user_id}}" /></li>
+        </xf:foreach>
+    </ol>
+</xf:macro>
+
+<xf:macro name="list_users_with_avatar" arg-users="!" arg-profileUrls="!">
+    <ol class="block-row listPlain ugw-userList">
         <xf:foreach loop="$users" value="$user">
             <div class="contentRow">
                 <div class="contentRow-figure">
-                    <xf:avatar user="$user" size="xs"/>
+                    <xf:avatar user="$user" size="xs" href="{$profileUrls.{$user.user_id}}" />
                 </div>
                 <div class="contentRow-main contentRow-main--close">
-                    <xf:username user="$user"/>
-                    <div class="contentRow-minor contentRow-minor--hideLinks">
-                        <xf:if is="$user.Profile.website">
-                            <a href="{$user.Profile.website}" rel="nofollow">{$user.Profile.website}</a>
-                        </xf:if>
-                    </div>
+                    <xf:username user="$user" href="{$profileUrls.{$user.user_id}}" />
+                    <xf:if contentcheck="true">
+                        <div class="contentRow-minor contentRow-minor--hideLinks">
+                            <xf:contentcheck>
+                                <xf:if is="$user.Profile.website">
+                                    <a href="{$user.Profile.website}" rel="nofollow">{$user.Profile.website}</a>
+                                </xf:if>
+                            </xf:contentcheck>
+                        </div>
+                    </xf:if>
                 </div>
             </div>
         </xf:foreach>

@@ -1,0 +1,29 @@
+.ugw-block--avatar {
+  .ugw-userList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -@xf-paddingSmall;
+    margin-right: -@xf-paddingSmall;
+    li {
+      flex: 0 0 auto;
+      width: 25%;
+      min-width: 25%;
+      padding: @xf-paddingSmall;
+    }
+    .avatar {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.ugw-block--name_avatar {
+  .ugw-userList {
+    .contentRow {
+      + .contentRow {
+        margin-top: @xf-paddingMedium;
+      }
+    }
+  }
+}

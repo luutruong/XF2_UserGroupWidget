@@ -3,6 +3,7 @@
 namespace Truonglv\UserGroupWidget\Widget;
 
 use XF\Finder\User;
+use XF\Mvc\Entity\Finder;
 use XF\Widget\AbstractWidget;
 
 class UserGroup extends AbstractWidget
@@ -18,7 +19,7 @@ class UserGroup extends AbstractWidget
         'cache_ttl' => 300,
         'last_activity_start' => '',
         'last_activity_end' => '',
-        'display_avatar' => true,
+        'style' => 'name_avatar',
     ];
 
     /**
@@ -46,10 +47,28 @@ class UserGroup extends AbstractWidget
             $users = $users->slice(0, $this->options['limit']);
         }
 
+        $profileUrls = [];
+        $ourUsers = $this->app->finder('Truonglv\UserGroupWidget:User')
+            ->whereIds($userIds)
+            ->fetch();
+
+        $router = $this->app()->router('public');
+        /** @var \XF\Entity\User $user */
+        foreach ($users as $user) {
+            /** @var \Truonglv\UserGroupWidget\Entity\User|null $ourUserRef */
+            $ourUserRef = $ourUsers[$user->user_id] ?? null;
+            if ($ourUserRef === null || $ourUserRef->profile_url === '') {
+                $profileUrls[$user->user_id] = $router->buildLink('members', $user);
+            } else {
+                $profileUrls[$user->user_id] = $ourUserRef->profile_url;
+            }
+        }
+
         return $this->renderer('ugw_widget_users', [
             'users' => $users,
             'title' => $this->getTitle(),
-            'options' => $this->options
+            'options' => $this->options,
+            'profileUrls' => $profileUrls,
         ]);
     }
 
@@ -98,9 +117,11 @@ class UserGroup extends AbstractWidget
             }
         }
 
-        $finder->order($options['order'], $options['direction']);
+        $finder->order(
+            $options['order'] === 'random' ? Finder::ORDER_RANDOM : $options['order'],
+            $options['direction']
+        );
         $finder->limit($options['limit'] * 2);
-
         $users = $finder->fetchColumns('user_id');
 
         return array_column($users, 'user_id');
@@ -175,7 +196,7 @@ class UserGroup extends AbstractWidget
             'cache_ttl' => 'uint',
             'last_activity_start' => 'datetime',
             'last_activity_end' => 'datetime',
-            'display_avatar' => 'bool'
+            'style' => 'str'
         ]);
 
         if ($options['limit'] < 1) {

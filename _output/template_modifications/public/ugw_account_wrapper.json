@@ -1,0 +1,9 @@
+{
+    "template": "account_wrapper",
+    "description": "Add partners link",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<!--[XF:settings_links:bottom]-->",
+    "replace": "<a class=\"blockLink {{ $pageSelected == 'ugw-partners' ? 'is-selected' : '' }}\" \n   href=\"{{ link('account/ugw-partners') }}\">\n\t{{ phrase('ugw_partners_and_advertisers') }}\n</a>\n$0"
+}

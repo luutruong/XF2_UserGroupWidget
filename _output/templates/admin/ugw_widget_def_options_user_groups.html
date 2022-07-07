@@ -1,5 +1,5 @@
 <xf:checkboxrow label="{{ phrase('ugw_display_users_of_user_groups') }}"
-                value="{$options.user_group_ids}"
+                value="{$options.user_group_ids}" listclass="listColumns"
                 name="options[user_group_ids]">
     <xf:foreach loop="$userGroups" value="$userGroup">
         <xf:option value="{$userGroup.value}">{$userGroup.label}</xf:option>
@@ -25,6 +25,7 @@
     <xf:option value="register_date">{{ phrase('ugw_order_register_date') }}</xf:option>
     <xf:option value="trophy_points">{{ phrase('ugw_order_trophy_points') }}</xf:option>
     <xf:option value="reaction_score">{{ phrase('ugw_order_reaction_score') }}</xf:option>
+    <xf:option value="random">{{ phrase('ugw_order_random') }}</xf:option>
 </xf:radiorow>
 
 <xf:radiorow name="options[direction]" label="{{ phrase('ugw_order_direction') }}"
@@ -33,11 +34,11 @@
     <xf:option value="desc">{{ phrase('ugw_direction_descending') }}</xf:option>
 </xf:radiorow>
 
-<xf:checkboxrow label="">
-    <xf:option name="options[display_avatar]" value="1" selected="{$options.display_avatar}">
-        {{ phrase('ugw_display_user_avatar') }}
-    </xf:option>
-</xf:checkboxrow>
+<xf:radiorow name="options[style]" value="{$options.style}" label="{{ phrase('ugw_display_style') }}">
+    <xf:option value="name">{{ phrase('ugw_display_style_name') }}</xf:option>
+    <xf:option value="name_avatar">{{ phrase('ugw_display_style_name_with_avatar') }}</xf:option>
+    <xf:option value="avatar">{{ phrase('ugw_display_style_avatar_only') }}</xf:option>
+</xf:radiorow>
 
 <xf:numberboxrow name="options[cache_ttl]" value="{$options.cache_ttl}"
                  units="{{ phrase('units_seconds') }}"
