@@ -20,6 +20,7 @@ class UserGroup extends AbstractWidget
         'last_activity_start' => '',
         'last_activity_end' => '',
         'style' => 'name_avatar',
+        'html' => '',
     ];
 
     /**
@@ -58,10 +59,19 @@ class UserGroup extends AbstractWidget
             /** @var \Truonglv\UserGroupWidget\Entity\User|null $ourUserRef */
             $ourUserRef = $ourUsers[$user->user_id] ?? null;
             if ($ourUserRef === null || $ourUserRef->profile_url === '') {
-                $profileUrls[$user->user_id] = $router->buildLink('members', $user);
+                $aboutUrl = $router->buildLink('members', $user) . '#about';
+                $profileUrls[$user->user_id] = [
+                    'url' => $aboutUrl,
+                ];
             } else {
-                $profileUrls[$user->user_id] = $ourUserRef->profile_url;
+                $profileUrls[$user->user_id] = [
+                    'url' => $ourUserRef->profile_url,
+                ];
             }
+
+            $classTarget = $this->app()->stringFormatter()->getLinkClassTarget($profileUrls[$user->user_id]['url']);
+            $profileUrls[$user->user_id]['target'] = $classTarget['target'];
+            $profileUrls[$user->user_id]['rel'] = $classTarget['trusted'] === true ? '' : 'nofollow';
         }
 
         return $this->renderer('ugw_widget_users', [
@@ -196,7 +206,8 @@ class UserGroup extends AbstractWidget
             'cache_ttl' => 'uint',
             'last_activity_start' => 'datetime',
             'last_activity_end' => 'datetime',
-            'style' => 'str'
+            'style' => 'str',
+            'html' => 'str',
         ]);
 
         if ($options['limit'] < 1) {

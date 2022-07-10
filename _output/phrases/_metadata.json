@@ -53,6 +53,12 @@
         "version_string": "2.0.0",
         "hash": "0390489d04e0571e4f1d22765270207e"
     },
+    "ugw_extra_html.txt": {
+        "global_cache": false,
+        "version_id": 2000200,
+        "version_string": "2.0.2",
+        "hash": "c42083b51cd1aabc373fb7c9277569fb"
+    },
     "ugw_limit_entries.txt": {
         "global_cache": false,
         "version_id": 2000000,

@@ -1,0 +1,9 @@
+{
+    "template": "account_visitor_menu",
+    "description": "Add partners link",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<!--[XF:account_links:bottom]-->",
+    "replace": "<li><a href=\"{{ link('account/ugw-partners') }}\" \n\t   class=\"menu-linkRow\">{{ phrase('ugw_partners_and_advertisers') }}</a></li>\n$0"
+}

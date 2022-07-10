@@ -10,6 +10,7 @@
             <xf:else />
                 <xf:macro name="list_users" arg-users="{$users}" arg-profileUrls="{$profileUrls}" />
             </xf:if>
+            {$options.html|raw}
         </div>
     </div>
 </xf:if>
@@ -18,9 +19,7 @@
     <div class="block-row block-row--minor">
         <ul class="listInline listInline--comma ugw-userList">
             <xf:foreach loop="$users" value="$user"><xf:trim>
-                <li><xf:username user="$user" rich="true"
-                                 href="{$profileUrls.{$user.user_id}}"
-                                 class="{{ !$user.visible ? 'username--invisible' : '' }}" /></li>
+                <li><xf:macro name="username" arg-user="{$user}" arg-options="{$profileUrls.{$user.user_id}}" /></li>
             </xf:trim></xf:foreach>
         </ul>
     </div>
@@ -29,7 +28,10 @@
 <xf:macro name="list_users_avatar" arg-users="!" arg-profileUrls="!">
     <ol class="block-row listPlain ugw-userList">
         <xf:foreach loop="$users" value="$user">
-            <li><xf:avatar user="$user" size="m" img="true" href="{$profileUrls.{$user.user_id}}" /></li>
+            <li>
+                <xf:macro name="avatar" arg-user="{$user}" arg-size="m"
+                          arg-options="{$profileUrls.{$user.user_id}}" />
+            </li>
         </xf:foreach>
     </ol>
 </xf:macro>
@@ -39,10 +41,11 @@
         <xf:foreach loop="$users" value="$user">
             <div class="contentRow">
                 <div class="contentRow-figure">
-                    <xf:avatar user="$user" size="xs" href="{$profileUrls.{$user.user_id}}" />
+                    <xf:macro name="avatar" arg-user="{$user}" arg-size="xs"
+                              arg-options="{$profileUrls.{$user.user_id}}" />
                 </div>
                 <div class="contentRow-main contentRow-main--close">
-                    <xf:username user="$user" href="{$profileUrls.{$user.user_id}}" />
+                    <xf:macro name="username" arg-user="{$user}" arg-options="{$profileUrls.{$user.user_id}}" />
                     <xf:if contentcheck="true">
                         <div class="contentRow-minor contentRow-minor--hideLinks">
                             <xf:contentcheck>
@@ -56,4 +59,19 @@
             </div>
         </xf:foreach>
     </ol>
+</xf:macro>
+
+<xf:macro name="avatar" arg-user="!" arg-size="!" arg-options="!">
+    <xf:avatar user="$user" size="{$size}"
+               target="{$options.target}"
+               rel="{$options.rel}"
+               img="true"
+               href="{$options.url}" />
+</xf:macro>
+
+<xf:macro name="username" arg-user="!" arg-options="!">
+    <xf:username user="$user"
+                 href="{$options.url}"
+                 rel="{$options.rel}"
+                 target="{$options.target}" />
 </xf:macro>
