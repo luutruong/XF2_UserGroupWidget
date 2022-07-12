@@ -5,5 +5,5 @@
     "enabled": true,
     "action": "str_replace",
     "find": "<!--[XF:settings_links:bottom]-->",
-    "replace": "<a class=\"blockLink {{ $pageSelected == 'ugw-partners' ? 'is-selected' : '' }}\" \n   href=\"{{ link('account/ugw-partners') }}\">\n\t{{ phrase('ugw_partners_and_advertisers') }}\n</a>\n$0"
+    "replace": "<xf:if is=\"$xf.visitor.hasPermission('general', 'ugw_advertiserUrl')\">\n\t<a class=\"blockLink {{ $pageSelected == 'ugw-partners' ? 'is-selected' : '' }}\" \n\t   href=\"{{ link('account/ugw-partners') }}\">\n\t\t{{ phrase('ugw_partners_and_advertisers') }}\n\t</a>\n</xf:if>\n$0"
 }

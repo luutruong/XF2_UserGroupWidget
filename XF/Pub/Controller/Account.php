@@ -9,6 +9,10 @@ class Account extends XFCP_Account
     public function actionUGWPartners()
     {
         $visitor = \XF::visitor();
+        if (!$visitor->hasPermission('general', 'ugw_advertiserUrl')) {
+            return $this->noPermission();
+        }
+
         /** @var User|null $ourUser */
         $ourUser = $this->em()->find('Truonglv\UserGroupWidget:User', $visitor->user_id);
         if ($ourUser === null) {

@@ -5,5 +5,5 @@
     "enabled": true,
     "action": "str_replace",
     "find": "<!--[XF:account_links:bottom]-->",
-    "replace": "<li><a href=\"{{ link('account/ugw-partners') }}\" \n\t   class=\"menu-linkRow\">{{ phrase('ugw_partners_and_advertisers') }}</a></li>\n$0"
+    "replace": "<xf:if is=\"$xf.visitor.hasPermission('general', 'ugw_advertiserUrl')\">\n\t<li><a href=\"{{ link('account/ugw-partners') }}\" \n\t   class=\"menu-linkRow\">{{ phrase('ugw_partners_and_advertisers') }}</a></li>\n</xf:if>\n$0"
 }

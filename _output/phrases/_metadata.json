@@ -1,4 +1,10 @@
 {
+    "permission.general_ugw_advertiserUrl.txt": {
+        "global_cache": false,
+        "version_id": 2000300,
+        "version_string": "2.0.3",
+        "hash": "d8212fcb42c2b55748a37a29557dc95f"
+    },
     "ugw_cache_ttl.txt": {
         "global_cache": false,
         "version_id": 2000000,

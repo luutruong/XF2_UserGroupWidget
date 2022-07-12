@@ -1,4 +1,9 @@
 {
+    "admin/ugw_user_macros.html": {
+        "version_id": 2000300,
+        "version_string": "2.0.3",
+        "hash": "cc4182207aa5f39343a0c069ac8d0b72"
+    },
     "admin/ugw_widget_def_options_user_groups.html": {
         "version_id": 2000200,
         "version_string": "2.0.2",

@@ -20,7 +20,7 @@ class User extends Entity
 
         $structure->columns = [
             'user_id' => ['type' => self::UINT, 'required' => true],
-            'profile_url' => ['type' => self::STR, 'default' => '']
+            'profile_url' => ['type' => self::STR, 'default' => '', 'maxLength' => 255]
         ];
 
         return $structure;

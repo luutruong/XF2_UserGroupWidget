@@ -1,8 +1,11 @@
 {
+    "admin/ugw_user_edit.json": {
+        "hash": "c77a37b006390a36e04df49536665ee9"
+    },
     "public/ugw_account_visitor_menu.json": {
-        "hash": "cac29625164be01fb9e101c11dba46ec"
+        "hash": "b832bb87308553bfafa856b96629dd84"
     },
     "public/ugw_account_wrapper.json": {
-        "hash": "c05a98a0589bb1c59411b693aebcf706"
+        "hash": "084dbf8804a31e1808227be065ac7c14"
     }
 }
