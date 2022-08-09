@@ -183,10 +183,17 @@ class UserGroup extends AbstractWidget
 
     protected function getCacheId(): string
     {
-        return md5(
+        $options = $this->options;
+        foreach (\array_keys($options) as $key) {
+            if (!isset($this->defaultOptions[$key])) {
+                unset($options[$key]);
+            }
+        }
+
+        return \md5(
             $this->widgetConfig->widgetKey
             . $this->widgetConfig->widgetId
-            . serialize($this->options)
+            . \serialize($options)
         );
     }
 
