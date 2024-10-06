@@ -1,4 +1,4 @@
-<xf:macro name="advertiser_url" arg-user="!">
+<xf:macro id="advertiser_url" arg-user="!">
     <xf:radiorow name="ugw[url_type]"
                  value="{{ ($user.profile_url == 'system' || $user.profile_url == '') ? 'system' : 'custom' }}"
                  label="{{ phrase('ugw_profile_url') }}"

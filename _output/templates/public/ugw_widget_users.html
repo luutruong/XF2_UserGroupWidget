@@ -4,48 +4,48 @@
         <div class="block-container">
             <xf:if is="$title"><h3 class="block-minorHeader">{$title}</h3></xf:if>
             <xf:if is="$options.style == 'name_avatar'">
-                <xf:macro name="list_users_with_avatar" arg-users="{$users}" arg-profileUrls="{$profileUrls}" />
+                <xf:macro id="list_users_with_avatar" arg-users="{$users}" arg-profileUrls="{$profileUrls}" />
             <xf:elseif is="$options.style == 'avatar'" />
-                <xf:macro name="list_users_avatar" arg-users="{$users}" arg-profileUrls="{$profileUrls}" />
+                <xf:macro id="list_users_avatar" arg-users="{$users}" arg-profileUrls="{$profileUrls}" />
             <xf:else />
-                <xf:macro name="list_users" arg-users="{$users}" arg-profileUrls="{$profileUrls}" />
+                <xf:macro id="list_users" arg-users="{$users}" arg-profileUrls="{$profileUrls}" />
             </xf:if>
             {$options.html|raw}
         </div>
     </div>
 </xf:if>
 
-<xf:macro name="list_users" arg-users="!" arg-profileUrls="!">
+<xf:macro id="list_users" arg-users="!" arg-profileUrls="!">
     <div class="block-row block-row--minor">
         <ul class="listInline listInline--comma ugw-userList">
             <xf:foreach loop="$users" value="$user"><xf:trim>
-                <li><xf:macro name="username" arg-user="{$user}" arg-options="{$profileUrls.{$user.user_id}}" /></li>
+                <li><xf:macro id="username" arg-user="{$user}" arg-options="{$profileUrls.{$user.user_id}}" /></li>
             </xf:trim></xf:foreach>
         </ul>
     </div>
 </xf:macro>
 
-<xf:macro name="list_users_avatar" arg-users="!" arg-profileUrls="!">
+<xf:macro id="list_users_avatar" arg-users="!" arg-profileUrls="!">
     <ol class="block-row listPlain ugw-userList">
         <xf:foreach loop="$users" value="$user">
             <li>
-                <xf:macro name="avatar" arg-user="{$user}" arg-size="m"
+                <xf:macro id="avatar" arg-user="{$user}" arg-size="m"
                           arg-options="{$profileUrls.{$user.user_id}}" />
             </li>
         </xf:foreach>
     </ol>
 </xf:macro>
 
-<xf:macro name="list_users_with_avatar" arg-users="!" arg-profileUrls="!">
+<xf:macro id="list_users_with_avatar" arg-users="!" arg-profileUrls="!">
     <ol class="block-row listPlain ugw-userList">
         <xf:foreach loop="$users" value="$user">
             <div class="contentRow">
                 <div class="contentRow-figure">
-                    <xf:macro name="avatar" arg-user="{$user}" arg-size="xs"
+                    <xf:macro id="avatar" arg-user="{$user}" arg-size="xs"
                               arg-options="{$profileUrls.{$user.user_id}}" />
                 </div>
                 <div class="contentRow-main contentRow-main--close">
-                    <xf:macro name="username" arg-user="{$user}" arg-options="{$profileUrls.{$user.user_id}}" />
+                    <xf:macro id="username" arg-user="{$user}" arg-options="{$profileUrls.{$user.user_id}}" />
                     <xf:if contentcheck="true">
                         <div class="contentRow-minor contentRow-minor--hideLinks">
                             <xf:contentcheck>
@@ -61,7 +61,7 @@
     </ol>
 </xf:macro>
 
-<xf:macro name="avatar" arg-user="!" arg-size="!" arg-options="!">
+<xf:macro id="avatar" arg-user="!" arg-size="!" arg-options="!">
     <xf:avatar user="$user" size="{$size}"
                target="{$options.target}"
                rel="{$options.rel}"
@@ -69,7 +69,7 @@
                href="{$options.url}" />
 </xf:macro>
 
-<xf:macro name="username" arg-user="!" arg-options="!">
+<xf:macro id="username" arg-user="!" arg-options="!">
     <xf:username user="$user"
                  href="{$options.url}"
                  rel="{$options.rel}"

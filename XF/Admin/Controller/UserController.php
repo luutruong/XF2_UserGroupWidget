@@ -2,7 +2,9 @@
 
 namespace Truonglv\UserGroupWidget\XF\Admin\Controller;
 
-class User extends XFCP_User
+use Truonglv\UserGroupWidget\Entity\User;
+
+class UserController extends XFCP_UserController
 {
     /**
      * @param \XF\Entity\User $user
@@ -14,7 +16,7 @@ class User extends XFCP_User
 
         $response->setParam(
             'ugwUser',
-            $this->em()->find('Truonglv\UserGroupWidget:User', $user->user_id)
+            $this->em()->find(User::class, $user->user_id)
         );
 
         return $response;

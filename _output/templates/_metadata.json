@@ -1,8 +1,8 @@
 {
     "admin/ugw_user_macros.html": {
-        "version_id": 2000300,
-        "version_string": "2.0.3",
-        "hash": "cc4182207aa5f39343a0c069ac8d0b72"
+        "version_id": 2000400,
+        "version_string": "2.0.4",
+        "hash": "326ee31b3f0c2b331cb5b1e9a4ec4949"
     },
     "admin/ugw_widget_def_options_user_groups.html": {
         "version_id": 2000200,
@@ -15,9 +15,9 @@
         "hash": "b77cc1578536f433915d7bc6531d9141"
     },
     "public/ugw_widget_users.html": {
-        "version_id": 2000200,
-        "version_string": "2.0.2",
-        "hash": "6fe030fddff9ce6679ba89004b31eb39"
+        "version_id": 2000400,
+        "version_string": "2.0.4",
+        "hash": "3f5d6407f867347b5d18e4c883e8a8e1"
     },
     "public/ugw_widget_users.less": {
         "version_id": 2000100,

@@ -1,8 +1,8 @@
 {
-    "XF-Admin-Controller-User_Truonglv-UserGroupWidget-XF-Admin-Controller-User.json": {
-        "hash": "dbae7ba4fc646905890b427760c94cbe"
+    "XF-Admin-Controller-UserController_Truonglv-UserGroupWidget-XF-Admin-Controller-UserController.json": {
+        "hash": "5836ff25a0e2435c4f44194957476ca2"
     },
-    "XF-Pub-Controller-Account_Truonglv-UserGroupWidget-XF-Pub-Controller-Account.json": {
-        "hash": "6f9ebf05bb1741837c2213471ce8f1bc"
+    "XF-Pub-Controller-AccountController_Truonglv-UserGroupWidget-XF-Pub-Controller-AccountController.json": {
+        "hash": "ce6448be9d92718c207cfd20efcfc5c4"
     }
 }

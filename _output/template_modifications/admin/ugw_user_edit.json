@@ -4,6 +4,6 @@
     "execution_order": 10,
     "enabled": true,
     "action": "str_replace",
-    "find": "<xf:numberboxrow name=\"user[trophy_points]\" value=\"{$user.trophy_points}\" min=\"0\"\n\t\t\t\t\t\tlabel=\"{{ phrase('trophy_points') }}\" />",
-    "replace": "$0\n<xf:macro name=\"ugw_user_macros::advertiser_url\" arg-user=\"{$ugwUser}\" />"
+    "find": "<xf:numberboxrow name=\"user[trophy_points]\" value=\"{$user.trophy_points}\"",
+    "replace": "<xf:macro id=\"ugw_user_macros::advertiser_url\" arg-user=\"{$ugwUser}\" />\n$0"
 }

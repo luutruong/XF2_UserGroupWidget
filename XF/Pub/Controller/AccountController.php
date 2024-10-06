@@ -2,22 +2,22 @@
 
 namespace Truonglv\UserGroupWidget\XF\Pub\Controller;
 
+use XF;
 use Truonglv\UserGroupWidget\Entity\User;
 
-class Account extends XFCP_Account
+class AccountController extends XFCP_AccountController
 {
     public function actionUGWPartners()
     {
-        $visitor = \XF::visitor();
+        $visitor = XF::visitor();
         if (!$visitor->hasPermission('general', 'ugw_advertiserUrl')) {
             return $this->noPermission();
         }
 
-        /** @var User|null $ourUser */
-        $ourUser = $this->em()->find('Truonglv\UserGroupWidget:User', $visitor->user_id);
+        $ourUser = $this->em()->find(User::class, $visitor->user_id);
         if ($ourUser === null) {
             /** @var User $ourUser */
-            $ourUser = $this->em()->create('Truonglv\UserGroupWidget:User');
+            $ourUser = $this->em()->create(User::class);
             $ourUser->user_id = $visitor->user_id;
         }
 

@@ -2,7 +2,12 @@
 
 namespace Truonglv\UserGroupWidget\Widget;
 
+use XF;
+use DateTime;
+use function md5;
 use XF\Finder\User;
+use function serialize;
+use function array_keys;
 use XF\Mvc\Entity\Finder;
 use XF\Widget\AbstractWidget;
 
@@ -113,14 +118,14 @@ class UserGroup extends AbstractWidget
         }
 
         if ($options['last_activity_start'] !== '') {
-            $dt = \DateTime::createFromFormat('Y-m-d', $options['last_activity_start']);
+            $dt = DateTime::createFromFormat('Y-m-d', $options['last_activity_start']);
             if ($dt !== false) {
                 $dt->setTime(0, 0, 0);
                 $finder->where('last_activity', '>=', $dt->getTimestamp());
             }
         }
         if ($options['last_activity_end'] !== '') {
-            $dt = \DateTime::createFromFormat('Y-m-d', $options['last_activity_end']);
+            $dt = DateTime::createFromFormat('Y-m-d', $options['last_activity_end']);
             if ($dt !== false) {
                 $dt->setTime(23, 59, 59);
                 $finder->where('last_activity', '<=', $dt->getTimestamp());
@@ -184,16 +189,16 @@ class UserGroup extends AbstractWidget
     protected function getCacheId(): string
     {
         $options = $this->options;
-        foreach (\array_keys($options) as $key) {
+        foreach (array_keys($options) as $key) {
             if (!isset($this->defaultOptions[$key])) {
                 unset($options[$key]);
             }
         }
 
-        return \md5(
+        return md5(
             $this->widgetConfig->widgetKey
             . $this->widgetConfig->widgetId
-            . \serialize($options)
+            . serialize($options)
         );
     }
 
@@ -221,8 +226,8 @@ class UserGroup extends AbstractWidget
             $options['limit'] = 1;
         }
 
-        $visitor = \XF::visitor();
-        $language = \XF::app()->language($visitor->language_id);
+        $visitor = XF::visitor();
+        $language = XF::app()->language($visitor->language_id);
         if ($options['last_activity_start'] > 0) {
             $options['last_activity_start'] = $language->date($options['last_activity_start'], 'picker');
         } else {
